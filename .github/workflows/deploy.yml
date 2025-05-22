@@ -41,6 +41,6 @@ jobs:
           ssh-keyscan ${{secrets.HOST}} >> ~/.ssh/known_hosts
 
       - name: Update
-        run: ssh ${{secrets.USERNAME}}@${{secrets.HOST}} "cd lab-tw-2b4 && git pull"
+        run: ssh ${{secrets.USERNAME}}@${{secrets.HOST}} "cd lab-tw-2b4 && git pull && make update"
       - name: Cleanup
         run: rm -rf ~/.ssh
